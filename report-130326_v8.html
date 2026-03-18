@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latumi Market Flow V8</title>
+<style>
+:root{
+  --bg:#e9eef5;
+  --card:#ffffff;
+  --text:#101828;
+  --muted:#667085;
+  --line:#e4e7ec;
+  --green:#16a34a;
+  --red:#dc2626;
+  --amber:#c77700;
+  --blue:#2563eb;
+  --shadow:0 10px 28px rgba(15,23,42,.08);
+}
+
+*{box-sizing:border-box}
+
+html, body{
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:transparent;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text);
+}
+
+.wrap{
+  width:1080px;
+  margin:0 auto;
+  padding:14px;
+  background:var(--bg);
+}
+
+.card{
+  width:100%;
+  margin:0;
+  background:var(--card);
+  border-radius:24px;
+  padding:22px 34px 26px;
+  box-shadow:var(--shadow);
+}
+
+.title{
+  font-size:36px;
+  font-weight:800;
+  line-height:1.22;
+  margin:0 0 8px 0;
+  letter-spacing:-0.3px;
+}
+
+.section{
+  border-top:1px solid var(--line);
+  padding:14px 0;
+  font-size:24px;
+  line-height:1.55;
+}
+
+.label{
+  font-weight:800;
+}
+
+.green{color:var(--green);font-weight:800}
+.red{color:var(--red);font-weight:800}
+.blue{color:var(--blue);font-weight:800}
+.amber{color:var(--amber);font-weight:800}
+.muted{color:var(--muted)}
+
+.flow-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:12px;
+  margin-top:10px;
+}
+
+.flow-box{
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px 14px;
+  min-height:92px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.flow-name{
+  font-size:18px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+.flow-value{
+  font-size:24px;
+  font-weight:800;
+  line-height:1.2;
+}
+
+.note{
+  background:#fff8e8;
+  border:1px solid #f2dfaa;
+  border-radius:14px;
+  padding:14px 16px;
+  margin-top:10px;
+  font-size:22px;
+  line-height:1.6;
+}
+
+.footer{
+  background:#f8fafc;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:14px 16px;
+  margin-top:10px;
+  font-size:22px;
+  line-height:1.65;
+}
+
+.block-title{
+  font-size:24px;
+  font-weight:800;
+  margin-bottom:6px;
+}
+
+.row{
+  margin-top:2px;
+}
+
+.row + .row{
+  margin-top:2px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+
+    <div class="title">
+      📊 VNINDEX 13/03/2026: 1,696.24
+      <span class="red">-13.37đ (-0.78%)</span>
+    </div>
+
+    <div class="section">
+      <span class="label">Thanh khoản:</span> 1,023.1M cổ phiếu
+      <span class="green">(▲ ~6.9% so với phiên trước)</span><br>
+      <span class="label">GTGD:</span> 27,428.1 tỷ
+    </div>
+
+    <div class="section">
+      <div class="block-title">💵 Dòng tiền</div>
+      <div class="flow-grid">
+        <div class="flow-box">
+          <div class="flow-name">Khối ngoại</div>
+          <div class="flow-value red">-417 tỷ</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-name">Tổ chức</div>
+          <div class="flow-value red">-629 tỷ</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-name">Tự doanh</div>
+          <div class="flow-value red">-52 tỷ</div>
+        </div>
+        <div class="flow-box">
+          <div class="flow-name">Cá nhân</div>
+          <div class="flow-value green">+1,098 tỷ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="block-title">🌍 Khối ngoại</div>
+      <div class="row"><span class="label">Mua ròng:</span> KDH (+141), VNM (+139), MSN (+133), ACB (+119), VIB (+116)</div>
+      <div class="row"><span class="label">Bán mạnh:</span> BSR (-286), VIC (-133), SSI (-99), VHM (-96), PLX (-90)</div>
+    </div>
+
+    <div class="section">
+      <div class="block-title">🏢 Tự doanh</div>
+      <div class="row"><span class="label">Mua mạnh:</span> VCB (+46), HPG (+42), HDB (+26), VPB (+26), MWG (+17)</div>
+      <div class="row"><span class="label">Bán ròng:</span> VIB (-90), KDH (-86), TCB (-85), TCH (-69), STB (-69)</div>
+    </div>
+
+    <div class="section">
+      <span class="label">🔥 Flow Signal:</span>
+      <span class="red">RETAIL ABSORPTION</span>
+    </div>
+
+    <div class="section">
+      <span class="label">📡 Market Regime:</span>
+      <span class="amber">WEAK PULLBACK</span><br>
+      <span class="label">🎯 Market Character:</span>
+      <span class="blue">NARROW SELL-OFF WITH RETAIL BUYING</span>
+    </div>
+
+    <div class="section">
+      <div class="block-title">⚠️ Early Warning</div>
+      <div class="note">
+        Thị trường giảm nhẹ nhưng thanh khoản tăng trở lại, trong khi cả khối ngoại, tổ chức và tự doanh cùng bán ròng. Lực mua chủ yếu đến từ nhà đầu tư cá nhân, nên nhịp hấp thụ này vẫn cần theo dõi thêm về độ bền.
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="label">🧬 Market Timing Score:</span>
+      <span class="red">41 / 100 — RISK STILL HIGH</span>
+    </div>
+
+    <div class="section">
+      <div class="footer">
+        ➡ Dòng tiền cá nhân đang hấp thụ lượng bán từ ba nhóm còn lại. Nếu thiếu lực đỡ từ tổ chức trong các phiên tới, vùng <b>1,680–1,685</b> sẽ tiếp tục là hỗ trợ ngắn hạn quan trọng.
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
