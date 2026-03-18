@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Latumi Stock Report</title>
+</head>
+<body>
+<h3>Finding latest report...</h3>
+
+<script>
+    fetch('https://api.github.com/repos/latumi231286/stock-report/contents/')
+      .then(res => res.json())
+      .then(files => {
+        const reports = files
+          .map(f => f.name)
+          .filter(name => name.startsWith("report-") && name.endsWith(".html"))
+          .sort()
+
+        const latest = reports[reports.length - 1];
+
+        window.location.href = latest;
+      });
+</script>
+
+<ul id="list"></ul>
+
+<script>
+    fetch('https://api.github.com/repos/latumi231286/stock-report/contents/')
+      .then(res => res.json())
+      .then(files => {
+        const reports = files
+          .map(f => f.name)
+          .filter(name => name.startsWith("report-") && name.endsWith(".html"))
+          .sort()
+          .reverse();
+
+        const list = document.getElementById("list");
+
+        reports.forEach(r => {
+          const li = document.createElement("li");
+          li.innerHTML = `<a href="${r}">${r}</a>`;
+          list.appendChild(li);
+        });
+
+        // auto redirect latest
+        window.location.href = reports[0];
+      });
+</script>
+
+</body>
+</html>
